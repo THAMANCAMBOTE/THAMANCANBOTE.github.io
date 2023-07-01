@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa con Leaflet</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    #mapContainer {
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="mapContainer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    var myMap = L.map('mapContainer').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; OpenStreetMap contributors'
+    }).addTo(myMap);
+
+    L.marker([51.5, -0.09]).addTo(myMap)
+      .bindPopup('¡Hola! Soy un marcador.');
+
+  </script>
+</body>
+</html>
